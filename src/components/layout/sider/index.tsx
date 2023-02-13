@@ -235,18 +235,23 @@ export const Sider: typeof DefaultSider = ({ render }) => {
             py: 1,
             '&.Mui-selected': {
               '&:hover': {
-                backgroundColor: 'transparent',
+                backgroundColor:
+                  selectedKey === '/' ? '#1e36e8' : 'transparent',
               },
-              backgroundColor: 'transparent',
+              backgroundColor: selectedKey === '/' ? '#475be8' : 'transparent',
             },
             justifyContent: 'center',
+            margin: '10px auto',
+            borderRadius: '12px',
+            minHeight: '56px',
+            width: '90%',
           }}
         >
           <ListItemIcon
             sx={{
               justifyContent: 'center',
               minWidth: 36,
-              color: 'primary.contrastText',
+              color: selectedKey === '/' ? '#fff' : '#808191',
             }}
           >
             <Dashboard />
@@ -257,6 +262,8 @@ export const Sider: typeof DefaultSider = ({ render }) => {
               noWrap: true,
               fontSize: '16px',
               fontWeight: selectedKey === '/' ? 'bold' : 'normal',
+              color: selectedKey === '/' ? '#fff' : '#808191',
+              marginLeft: '5px',
             }}
           />
         </ListItemButton>
